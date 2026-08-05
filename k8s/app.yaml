@@ -19,6 +19,7 @@ spec:
       containers:
       - name: cloud-application
         image: container-registry.br-ne1.magalu.cloud/${MGC_REGISTRY_NAME}/cloud-application:${IMAGE_TAG}
+        imagePullPolicy: Always # Garante que a imagem seja sempre baixada do repositório, mesmo que já exista localmente;
         ports:
         - containerPort: 8000
         env:
