@@ -107,7 +107,7 @@ def health(db: Session = Depends(get_db)):
         db_status = "ok"
     except Exception:
         db_status = "unavailable"
-    return {"status": "ok" if db_status == "ok" else "degraded", "database": db_status}
+    return {"status": "ok, service running" if db_status == "ok" else "degraded", "database": db_status}
 
 
 @app.get("/stats", tags=["health"])
